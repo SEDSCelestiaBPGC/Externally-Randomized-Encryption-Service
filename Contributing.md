@@ -10,6 +10,7 @@ First off, thanks for taking the time to contribute!The following is a set of gu
 
 ## How Can I Contribute?
 - To contribute please put in Pull Requests using Python and Google Colab
+- Always test your code before launching a pull request.
 - Report Bugs
 - Suggest enhancements to the code
 
