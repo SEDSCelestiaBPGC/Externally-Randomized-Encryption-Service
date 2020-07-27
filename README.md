@@ -18,6 +18,6 @@ To improve the hence obtained random number sequence, we shall use Genetic Algor
 ### Encryption
 To encrypt the plaintext, we shall use Vernam cipher (or a modification of it).
 
-To code the encryption and the generating key, we will make use of Python and its various libraries, and code in Google Colab.A basic understanding and knowledge of the above mentioned terms and Python is considered necessary for this project.
+To code the encryption and the generating key, we will make use of Python and its various libraries, and code in Google Colab. A basic understanding and knowledge of the above mentioned terms and Python is considered necessary for this project.
 ## What we wish to achieve: 
 After encryption, we shall be comparing it with similar or other existing encryption processes, to see which fares better. Several tests such as randomness of key, length of the key, efficiency, time taken for adversaries to hack are employed.
