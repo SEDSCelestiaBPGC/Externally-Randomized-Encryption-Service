@@ -48,8 +48,9 @@ class rice_stones_prep:
 #example code 
 '''
 N = 360       #reqd. image sq. dimension
+T = 90        #threshold value
 preprocessor = rice_stones_prep('/content/rice-stones_test.jpg')
-final_img = preprocessor.img_prep(N)
+final_img = preprocessor.img_prep(N, T)
 cv2_imshow(final_img)
-preprocessor.test_ipynb(final_img)
+preprocessor.test_ipynb(final_img, "image")
 '''
