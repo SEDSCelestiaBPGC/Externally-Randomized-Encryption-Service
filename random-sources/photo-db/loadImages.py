@@ -8,7 +8,7 @@ class DownloadImages:
     return drive
 
   def loadfiles(self, folder_id):
-    drive = auth()
+    drive = self.auth()
     file_list = drive.ListFile({'q': folder_id + " in parents and trashed=false"}).GetList()
     for i,file1 in enumerate(file_list):
       file1['title'] = f'{i}.jpg'
