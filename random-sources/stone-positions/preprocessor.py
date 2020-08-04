@@ -15,22 +15,22 @@ class rice_stones_prep:
         self.img_path = img_path
         self.img = cv2.imread(self.img_path, cv2.IMREAD_GRAYSCALE)
     
-    def thresh(self, img, thr_val):
+    def __thresh(self, img, thr_val):
         ret, thresh_img = cv2.threshold(img, thr_val, 255, cv2.THRESH_BINARY)
         return thresh_img
     
-    def resize(self, img, dim):
+    def __resize(self, img, dim):
         resized_img = cv2.resize(img, (dim, dim))
         return resized_img
     
-    def blur(self, img):
+    def __blur(self, img):
         blur_img = cv2.medianBlur(img,5)
         return blur_img
     
     def img_prep(self, N, T):
-        img = self.resize(self.img, N)                                   #resizing img
-        img = self.thresh(img, T)                                  #threshold
-        final_img = self.blur(img)                                    #blur
+        img = self.__resize(self.img, N)                                   #resizing img
+        img = self.__thresh(img, T)                                  #threshold
+        final_img = self.__blur(img)                                    #blur
         return final_img
     
     #only for test runs
@@ -44,13 +44,3 @@ class rice_stones_prep:
         plt.imshow(img)
         plt.axis('off')
         plt.show()
-
-#example code 
-'''
-N = 360       #reqd. image sq. dimension
-T = 90        #threshold value
-preprocessor = rice_stones_prep('/content/rice-stones_test.jpg')
-final_img = preprocessor.img_prep(N, T)
-cv2_imshow(final_img)
-preprocessor.test_ipynb(final_img, "image")
-'''
