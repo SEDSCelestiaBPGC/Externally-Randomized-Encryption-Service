@@ -9,9 +9,22 @@ class randomize:
         sortedArr = self.pts[self.pts[:,columnIndex].argsort()]
         return sortedArr
     
-    def randomPoints(self):
+    def __randomDecPoints(self):
         # sortArray = self.__sortArray(columnIndex)
         cy = np.asarray([p[1] for p in self.__sortArray(0)])
         cx = np.asarray([p[0] for p in self.__sortArray(1)])
-        random_sequence = np.concatenate ([cx,cy], axis=None)
-        return random_sequence
+        random_dec_sequence = np.concatenate ([cx,cy], axis=None)
+        return random_dec_sequence
+
+
+    def randomBinPoints(self):
+        dec_seq = self.__randomDecPoints()
+        floored = np.floor(dec_seq)
+        sequence = []
+        for element in floored:
+            binary = bin(int(element))
+            binary = binary[2:]
+            sequence += binary
+        return sequence
+
+        
